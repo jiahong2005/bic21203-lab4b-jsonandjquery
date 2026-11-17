@@ -1,0 +1,23 @@
+<style>
+    .myStyle {
+        background-color: coral;
+        padding: 16px;
+    }
+</style>
+
+<div id="myElement">Original Text</div>
+<div id="myDIV">
+    <p>I am a myDIV.</p>
+</div>
+<button id="myButton">Click me</button>
+
+<script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+<script>
+    $(function () {
+        $("#myElement").text("Modified Text");
+        $("#myDIV").addClass("myStyle");
+        $("#myButton").on("click", function () {
+            alert("Button clicked!");
+        });
+    });
+</script>

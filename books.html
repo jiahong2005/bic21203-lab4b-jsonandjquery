@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Books</h1>
+    <p id="error" role="alert"></p>
+
+    <h2>(a) Title of the first book</h2>
+    <p id="firstTitle"></p>
+
+    <h2>(b) Author of the second book</h2>
+    <p id="secondAuthor"></p>
+
+    <h2>(c) Genres of both books</h2>
+    <ul id="genreList"></ul>
+
+    <script>
+        const errorBox = document.getElementById("Error");
+        const firstTitle = document.getElementById("firstTitle");
+        const secondAuthor = document.getElementById("secondAuthor");
+        const genreList = document.getElementById("genreList");
+
+        async function loadBooks() {
+            try {
+                const response = await fetch("books.json");
+                if(!response.ok) throw new Error("HTTP" + response.status);
+                const data = await response.json();
+                const books = data.books;
+
+                firstTitle.textContent = books[0].title;
+                secondAuthor.textContent = books[1].author;
+
+                for(const book of books){
+                    const li = document.createElement("li");
+                    li.textContent = book.title + " \u2014 " + book.genres.join(", ");
+                    genreList.appendChild(li); 
+                }
+            }
+            catch (error){
+                errorBox.textContent = "Sorry, the book data could not be loaded...";
+            }
+        }
+        loadBooks();
+    </script>
+</body>
+</html>
