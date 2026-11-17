@@ -18,7 +18,7 @@ This repository contains three files that demonstrate JSON data, the native `fet
 **File:** `books.html**Explanation:** The page uses `fetch("books.json")` with `async/await`. It checks `response.ok`, parses the data with `response.json()` and displays (a) the title of the first book, (b) the author of the second book and (c) the genres of both books grouped by title. Elements are created with `createElement()` and text is set with `textContent`. A `try...catch` block shows a user-friendly error message if the request fails or the JSON is invalid.
 **Screenshots:| Browser output (via local server) | Error message test |
 |---|---|
-| ![Q2 output](screenshots/q2-output.png) | ![Q2 error](screenshots/q2-error.png) |
+| ![Q2 output](q2_output.png) | ![Q2 error](q2_error.png) |
 __
 ## Question 3: Compare Native JavaScript and jQuery
 **File:** `jquery-dom.html`
@@ -37,7 +37,7 @@ __
 
 | After page load | After clicking the button |
 |---|---|
-| ![Q3 loaded](screenshots/q3-loaded.png) | ![Q3 alert](screenshots/q3-alert.png) |
+| ![Q3 loaded](q3_loaded.png) | ![Q3 alert](q3_alert.png) |
 
 ## Technologies_
 
